@@ -105,3 +105,47 @@ a {
     color-scheme: dark;
   }
 } */
+
+body {
+  padding: 0;
+  margin: 0;
+}
+h1 {
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 24px;
+  text-align: center;
+}
+.formBox {
+  margin: auto;
+  background-color: chocolate;
+  padding: 20px;
+}
+.formBox form{
+  width: 500px;
+  margin: auto;
+  text-align: center;
+}
+.formBox input {
+display: block;
+margin: 10px auto;
+width: 250px;
+}
+input {
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid yellow;
+}
+button {
+  background-color: yellowgreen;
+  border-radius: 10px;
+  border: 1px solid yellow;
+  padding: 8px 30px;
+  color: #000;
+  font-size: 14px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #618911;
+}

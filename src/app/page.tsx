@@ -18,12 +18,14 @@ function Home() {
   // Every function return something
   return (
     <>
+    <div className="formBox">
       <h1>Student Addmission Form</h1>
       <form method="GET" action={formAction}>
-        <input type="text" name="firstname"/><br/><br/>
-        <input type="text" name="surname"/><br/><br/>
+        <input type="text" name="firstname"/>
+        <input type="text" name="surname"/>
         <button type="submit">Add Student</button>
       </form>
+      </div>
     </>
   )
 }
