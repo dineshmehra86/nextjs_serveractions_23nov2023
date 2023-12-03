@@ -1,4 +1,14 @@
 // 1. Import Area
+// import { NamedImport } from 'somelibrary'
+import { PrismaClient } from '@prisma/client'
+//import { PrismaClient } from '@prisma/client/edge'
+
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+
+// const classObject = new className();
+   const prisma = new PrismaClient()
+
 
 // 2. Defination Area
 function Home() {
@@ -11,16 +21,38 @@ function Home() {
   console.log('I am firstname value', fn);
   console.log('I am surname value', ln);
 
-  }
-  let dkm = async () => { // New style to declare function = FAT Arrow Function
+  // below code is created to send the record to the DB
+  try{
+    //prisma.modal.method()
+    const student = await prisma.students_tbl.create({
+    data: {
+    // P:V
+      firstname:"" + fn,
+      surname:"" + ln
+    },
+  });
 
+Swal.fire({
+  position: "top-end",
+  icon: "success",
+  title: "Your work has been saved",
+  showConfirmButton: false,
+  timer: 1500
+});
+
+  } catch(error) {
+    console.log(error);
   }
+}
+  // let dkm = async () => { // New style to declare function = FAT Arrow Function
+
+  // }
   // Every function return something
   return (
     <>
     <div className="formBox">
       <h1>Student Addmission Form</h1>
-      <form method="GET" action={formAction}>
+      <form method="POST" action={formAction}>
         <input type="text" name="firstname"/>
         <input type="text" name="surname"/>
         <button type="submit">Add Student</button>
